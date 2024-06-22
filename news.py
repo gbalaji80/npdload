@@ -11,8 +11,23 @@ dailyDate=""
 
 mwIssueNumber=""
 
+ftURL="https://freemagazines.top/financial-times-"
+ttURL="https://freemagazines.top/the-times-"
+ftwkURL="https://freemagazines.top/financial-times-weekend-uk-"
+wsjURL="https://freemagazines.top/the-wall-street-journal-"
+wpURL="https://freemagazinespdf.com/the-washington-post-"
+ecoURL="https://freemagazines.top/the-economist-usa-"
+tgURL="https://freemagazines.top/the-guardian-"
+brURL="https://freemagazines.top/barrons-"
+brmURL="https://freemagazines.top/barrons-magazine-"
+mwURL="https://freemagazines.top/moneyweek-issue-"
+
+
+
+
 configFile="config.csv"
-path="/home/balaji/Documents/googleDrive/news/"
+#path="/home/balaji/Documents/googleDrive/news/"
+path="/mnt/sda/docs/news/"
 
 def getMonth(dailyMonth):
     if dailyMonth == "01":
@@ -83,36 +98,29 @@ def extractUrl(dailyPaper,dailyYear,dailyMonth,dailyDate):
     if dailyPaper == "ft":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazines.top/financial-times-uk-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/financial-times-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
-        #URL = "https://freemagazinespdf.com/financial-times-uk-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
+        URL = ftURL+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
+        #URL = ftURL+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
         return URL 
     elif dailyPaper == "tt":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/the-times-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
-        URL =  "https://freemagazines.top/the-times-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
-        #URL =  "https://freemagazines.top/the-times-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
-
+        URL=ttURL+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
+        #URL = ftURL+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "ftwk":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/financial-times-weekend-uk-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/financial-times-weekend-uk-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
+        URL = ftwkURL+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "wsj":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/the-wall-street-journal-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
-        #URL = "https://freemagazines.top/the-wall-street-journal-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/the-wall-street-journal-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
+        URL = wsjURL+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "wp":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/the-washington-post-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/the-washington-post-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
+        URL = wpURL+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "gm":
         dailyMonth = getMonth(dailyMonth)
@@ -122,36 +130,35 @@ def extractUrl(dailyPaper,dailyYear,dailyMonth,dailyDate):
     elif dailyPaper == "eco":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/the-economist-usa-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/the-economist-usa-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
+        URL = ecoURL+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "tg":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazines.top/the-guardian-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"-free-pdf-download/"
-        URL = "https://freemagazines.top/the-guardian-" + dailyDate + "-" + dailyMonth + "-" + dailyYear+"/"
+        URL = tgURL + dailyDate + "-" + dailyMonth + "-" + dailyYear+"/"
         return URL
     elif dailyPaper == "br":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/barrons-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/barrons-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
+        URL = brURL+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "brm":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        URL = "https://freemagazines.top/barrons-magazine-"+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
+        URL = brmURL+dailyMonth+"-"+dailyDate+"-"+dailyYear+"/"
         return URL
     elif dailyPaper == "mw":
         dailyMonth = getMonth(dailyMonth)
         dailyDate = getDate(dailyPaper,dailyDate)
-        #URL = "https://freemagazinespdf.com/moneyweek-issue-"+mwIssueNumber+"-"+dailyDate+"-"+dailyMonth+"-"+dailyYear+"/"
-        URL = "https://freemagazines.top/moneyweek-issue-"+mwIssueNumber+"-"+dailyDate+"-" + dailyMonth  + "-" + dailyYear +"/"
+        URL = mwURL+mwIssueNumber+"-"+dailyDate+"-" + dailyMonth  + "-" + dailyYear +"/"
         return URL 
     
 with open(configFile, newline='') as csvfile:
     valuesExtracted = csv.reader(csvfile, delimiter=' ', quotechar='|')
     for line in valuesExtracted:
+        if line[0].startswith("#"):
+            continue
+
         currentline = line[0].split(",")
         dailyPaper=currentline[0]
         dailyYear=currentline[1]
@@ -168,8 +175,11 @@ with open(configFile, newline='') as csvfile:
         #print(pageText)
         #urls = re.findall('https?://(vk.com/doc[\\d].*_\\d+)', pageText)
         #urls = re.findall('https?://(vk.com/doc[\\d]+_\\d+)', pageText)
-        #urls = re.findall('(vk.com/doc[0-9].*_\d+)', pageText)
-        urls = re.findall('(vk.com/s/v1/doc/\w+[\-\_]\w+[\-\_]\w+)',pageText)
+        #urls = re.findall('https?:\/\/(vk.com\/s\/v1\/doc\/[\d\w\-]+\-\w+)', pageText)
+        
+        urls = re.findall('(vk.com/s/v1/doc/[\-\_a-zA-Z0-9]+)',pageText)
+        #urls = re.findall('(vk.com/s/v1/doc/\w+)',pageText)
+
         print(urls)
         #https://vk.com/s/v1/doc/fLSqkf3747eWwfDMFGCi4uTQcEU_qOm617l2tm7vWfrm_UO2TGM
         if urls == []:
@@ -189,7 +199,7 @@ with open(configFile, newline='') as csvfile:
             print("No url to download. exiting ....")
         URL= "https://"+urls[0].replace("\\","")
         r = requests.get(URL, stream=True)
-        chunk_size=2000
+        chunk_size=256000
         if int(dailyDate) < 10:
             dailyDate="0"+dailyDate
         fileName=dailyYear+dailyMonth+dailyDate+".pdf"
@@ -215,6 +225,11 @@ with open(configFile, newline='') as csvfile:
             command='mv ' + fileName +' '+ path+ 'WallStreetJournal/' + dailyYear + "/" + month+"/"
             os.system(command)
             print("Moved file to " + path+ 'WallStreetJournal/' + dailyYear + "/"+ month +"/")
+        if dailyPaper=="mw":
+            command='mv ' + fileName +' '+ path+ 'MoneyWeek/' + dailyYear + "/" + month+"/"
+            os.system(command)
+            print("Moved file to " + path+ 'WallStreetJournal/' + dailyYear + "/"+ month +"/")
+
 
 
 
